@@ -1,0 +1,164 @@
+<!--
+vehicle search
+!-->
+<!DOCTYPE html>
+<html>
+<title>RTO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header{
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+	color: Black;
+}
+</style>
+</head>
+<h1 class="w3-margin w3-jumbo" align="center" style="background-color: darkcyan">REGIONAL TRANSPORT OFFICE</h1>
+<body style="background-color: LightCyan">
+<div class="navbar">
+  <a href="http://localhost:8080/sl1_rto/index.html">Home</a>
+  <!--<a href="#">About</a>-->
+  <div class="dropdown">
+    <button class="dropbtn">Online Services 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://localhost:8080/sl1_rto/vehiclesearch.html">Details of Vehicle</a>
+      <a href="http://localhost:8080/sl1_rto/licensesearch.html">Details of License </a>
+      <a href="http://localhost:8080/sl1_rto/challanlicense.html">Details of e-challan </a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Informative 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://localhost:8080/sl1_rto/info1.html">LL/DL/Renewal of DL </a>
+      <a href="https://www.acko.com/articles/general-info/things-to-know-about-puc-certificate/">PUC</a>
+      <a href="http://localhost:8080/sl1_rto/rules.html">Rules </a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Application
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://localhost:8080/sl1_rto/llogin21.html">License Application</a>
+      <a href="http://localhost:8080/sl1_rto/vregistration.html">Vehicle Registration</a>
+    </div>
+  </div> 
+  
+  <div class="dropdown">
+    <button class="dropbtn">Login
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://localhost:8080/sl1_rto/admin.jsp">Admin</a>
+    </div>
+  </div> 
+</div>
+
+<script>
+	function validateForm() {
+	var x = document.forms["myForm"]["fname"].value;
+	if (x == "") {
+	alert("Name must be filled out");
+    	return false;
+  	}
+}
+</script>
+
+<header>LICENSE DETAILS</header>
+
+<div class="container"> 
+<form name="myForm" action="http://localhost:8080/sl1_rto/licensesearch.jsp" >
+<center>
+  <div class="row">
+	<div class="col-25">
+      		<label for="adhar">Aadhar number:</label>
+    	</div>
+    	<div class="col-75">
+            <input type="text" id="adhar_no" name="adhar_no" onsubmit="return validateForm()" method="post" required>
+    	</div>
+  	</div>
+<br><br>
+        <center>
+        <input type="submit" value="Search"><br><br>
+        <input type="reset" value="Reset">
+    </center>
+    
+</form>
+</div>
+    
+</body> 
+</html>

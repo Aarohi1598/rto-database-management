@@ -1,0 +1,122 @@
+<!--
+marks of license test by admin
+!-->
+<!DOCTYPE html>
+<html>
+<style>
+header{
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+	color: Black;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: Black;
+}
+
+li{
+	float: left;
+}
+
+li1{
+	float: right;
+}
+
+li a{
+	display: block;
+	color: white;
+	text-align: right;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li1 a{
+	display: block;
+	color: white;
+	text-align: right;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: LightGrey;
+}
+
+li1 a:hover {
+	background-color: LightGrey;
+}
+
+h1{
+	background-color: Teal;
+	padding: 30px;
+	text-align: center;
+	font-size: 40px;
+	color: Black;
+}
+
+.wrap{
+    text-align: center;
+}
+.wrap1{
+    text-align: left;
+}
+
+</style>
+
+<script>
+	function validateForm() {
+	var x = document.forms["myForm"]["fname"].value;
+	if (x == "") {
+	alert("Name must be filled out");
+    	return false;
+  	}
+}
+</script>
+
+<body style="background-color: LightCyan">
+    <h1>RTO</h1>
+<ul>
+	<!--<li><a class="active" href="http://localhost:8080/sl1_rto/index.html">Home</a></li>!-->
+	<li><a href="#news">About Us</a></li>
+	<li><a href="#contact">Contact Us</a></li>
+	<li1><a href="http://localhost:8080/sl1_rto/index.html">Logout</a></li1>
+</ul>
+<header>VEHICLE REGISTRATION STATUS</header>
+
+<div class="container"> 
+<form name="myForm" action="http://localhost:8080/sl1_rto/updatemarks2.jsp" >
+<center>
+  <div class="row">
+	<div class="col-25">
+      		<label for="cid">Enter the Aadhar Number:</label>
+    	</div>
+    	<div class="col-75">
+            <input type="text" id="adhar_no" name="adhar_no" onsubmit="return validateForm()" method="post" required>
+    	</div>
+  	</div>
+<br><br>
+
+<div class="row">
+	<div class="col-25">
+      		<label for="cid">Enter marks:</label>
+    	</div>
+    	<div class="col-75">
+            <input type="text" id="marks" name="marks" onsubmit="return validateForm()" method="post" required>
+    	</div>
+  	</div>
+<br><br>
+</center>
+    
+<div class="wrap"><input type="submit" value="Update"></div><br>
+    <div class="wrap"><input type="reset" value="Reset"></div>
+    
+</form>
+</div>
+    
+</body> 
+</html>
