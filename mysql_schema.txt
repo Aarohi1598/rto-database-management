@@ -1,0 +1,94 @@
+Database tables: 
+1. Admin
++--------------+--------------+--------------+
+|Name          |DataType      |Constraint    | 
++--------------+--------------+--------------+
+|username      |varchar       |primary key   |
++--------------+--------------+--------------+
+|password      |varchar       |null          |
++--------------+--------------+--------------+
+
+2. Applicant
++--------------+--------------+--------------+
+|Name          |DataType      |Constraint    | 
++--------------+--------------+--------------+
+|adhar_no      |bigint        |primary key   |
++--------------+--------------+--------------+
+|app_name      |varchar       |null          |
++--------------+--------------+--------------+
+|email         |varchar       |null          |
++--------------+--------------+--------------+
+|dob           |varchar       |null          |
++--------------+--------------+--------------+
+|gender        |char          |null          |
++--------------+--------------+--------------+
+
+3. Vehicle
++--------------+--------------+--------------+
+|Name          |DataType      |Constraint    | 
++--------------+--------------+--------------+
+|chassis_no    |varchar       |primary key   |
++--------------+--------------+--------------+
+|model_name    |varchar       |unique key    |
++--------------+--------------+--------------+
+|reg_no        |varchar       |unique key    |
++--------------+--------------+--------------+
+|color         |varchar       |null          |
++--------------+--------------+--------------+
+
+4. License
++--------------+--------------+--------------+
+|Name          |DataType      |Constraint    | 
++--------------+--------------+--------------+
+|lic_id        |varchar       |primary key   |
++--------------+--------------+--------------+
+|Doi           |varchar       |null          |
++--------------+--------------+--------------+
+|Doe           |varchar       |null          |
++--------------+--------------+--------------+
+|color         |varchar       |null          |
++--------------+--------------+--------------+
+|adhar_no      |varchar       |foreign key   |
++--------------+--------------+--------------+
+
+5. Fine
++--------------+--------------+--------------+
+|Name          |DataType      |Constraint    | 
++--------------+--------------+--------------+
+|fine_id       |varchar       |primary key   |
++--------------+--------------+--------------+
+|status        |varchar       |null          |
++--------------+--------------+--------------+
+|Amt           |int           |null          |
++--------------+--------------+--------------+
+|Doi           |date          |null          |
++--------------+--------------+--------------+
+|reg_no        |varchar       |foreign key   |
++--------------+--------------+--------------+
+
+6. Test
++--------------+--------------+--------------+
+|Name          |DataType      |Constraint    | 
++--------------+--------------+--------------+
+|adhar_no      |varchar       |primary key,  |
+|              |               foreign key   |
++--------------+--------------+--------------+
+|marks         |varchar       |null          |
++--------------+--------------+--------------+
+
+Trigger -> to insert data in test table 
+```
+    create trigger t1 after insert on app1
+    for each row
+    begin
+    insert into test (adhar_no) values (new.adhar_no);
+    end;
+```
+
+Procedure -> to insert in fine table
+```
+    create procedure p3(fid varchar(10),stat varchar(7),amount int,d varchar(10),rno varchar(10))
+    BEGIN
+    insert into fine1(fine_id,status,amt,doi,reg_no) values(fid,stat,amount,d,rno);
+    end;
+```
