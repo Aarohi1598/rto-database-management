@@ -1,6 +1,6 @@
 # rto-database-management
 
-## A basic prototype for RTO Database Management system with functionalities such as:
+## A prototype of the Regional Transport Office Database Management system with functionalities such as:
 1. Vehicle registration 
 2. Checking vehicle details 
 3. License application
